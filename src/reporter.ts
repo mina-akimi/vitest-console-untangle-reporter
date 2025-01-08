@@ -4,7 +4,6 @@ import { getSuites, getTests, getFullName } from '@vitest/runner/utils';
 import fs from 'fs';
 import c from 'tinyrainbow';
 import { stripVTControlCharacters } from 'node:util';
-import { ErrorWithDiff } from 'vitest';
 import { createLogFile } from './common.js';
 
 const F_LONG_DASH = '⎯';
@@ -142,7 +141,7 @@ export class Reporter extends DefaultReporter {
 
   // Adapted from https://github.com/vitest-dev/vitest/blob/3341fb58d0100821204798886f5303d1ee97550b/packages/vitest/src/node/reporters/base.ts#L469
   private printTaskErrorsOverride(tasks: Task[], errorDivider: () => void) {
-    const errorsQueue: [error: ErrorWithDiff | undefined, tests: Task[]][] = [];
+    const errorsQueue: [error: any | undefined, tests: Task[]][] = [];
 
     for (const task of tasks) {
       // Merge identical errors

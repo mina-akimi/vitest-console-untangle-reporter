@@ -1,19 +1,21 @@
 {
   "name": "@mina-akimi/vitest-console-untangle-reporter",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "Vitest reporter that untangles interleaved console log outputs from tests run in parallel",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "exports": {
-    "import": {
-      "default": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    },
-    "require": {
-      "default": "./dist/index.cjs",
-      "types": "./dist/index.d.cts"
+    ".": {
+      "import": {
+        "default": "./dist/index.js",
+        "types": "./dist/index.d.ts"
+      },
+      "require": {
+        "default": "./dist/index.cjs",
+        "types": "./dist/index.d.cts"
+      }
     }
   },
   "repository": "https://github.com/mina-akimi/vitest-console-untangle-reporter",
