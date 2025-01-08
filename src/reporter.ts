@@ -97,7 +97,7 @@ function getOutputDir(option?: ReporterOptions): string {
 /**
  * Custom reporter that prints the console log from parallel run tests correctly after each test.
  */
-export class Reporter extends DefaultReporter {
+export default class Reporter extends DefaultReporter {
   private readonly options: ReporterOptions;
 
   constructor(options: ReporterOptions = {}) {
