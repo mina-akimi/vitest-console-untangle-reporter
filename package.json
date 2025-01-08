@@ -17,7 +17,7 @@
     }
   },
   "repository": "https://github.com/mina-akimi/vitest-console-untangle-reporter",
-  "author": "Mina Akimi <minasan.akimi@gmail.com>",
+  "author": "Minasan Akimi <minasan.akimi@gmail.com>",
   "license": "MIT",
   "scripts": {
     "build": "tsup",
