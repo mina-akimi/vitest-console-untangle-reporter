@@ -17,7 +17,7 @@ yarn add -D @mina-akimi/vitest-console-untable-reporter
 ```ts
 // vitest.setup.ts, or any set up file you use
 
-import { setup } from '@mina-akimi/vitest-console-untable-reporter';
+import { setup } from '@mina-akimi/vitest-console-untable-reporter/setup';
 
 // Run this to set up the `beforeEach` and `afterEach` hooks to intercept console output and save it to a file.
 setup();
@@ -37,7 +37,7 @@ export default defineConfig({
   test: {
     setupFiles: ['./vitest.setup.ts'],
     // reporters: ['default'],
-    reporters: ['@mina-akimi/vitest-console-untable-reporter'],
+    reporters: ['@mina-akimi/vitest-console-untable-reporter/reporter'],
     // Or if you set up a different output directory, you must also set it correctly here, otherwise the reporter cannot find the log files.
     // reporters: [['@mina-akimi/vitest-console-untable-reporter', {outputDir: 'path/to/output/dir'}]],
   },

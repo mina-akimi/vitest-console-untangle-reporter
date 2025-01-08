@@ -195,7 +195,7 @@ export class Reporter extends DefaultReporter {
         }
       }
 
-      const screenshotPaths = tasks.map((t) => t.meta?.failScreenshotPath).filter((screenshot) => screenshot != null);
+      const screenshotPaths = tasks.map((t) => (t.meta as any)?.failScreenshotPath).filter((screenshot) => screenshot != null);
 
       this.ctx.logger.printError(error, {
         project: this.ctx.getProjectByName(tasks[0].file.projectName || ''),
