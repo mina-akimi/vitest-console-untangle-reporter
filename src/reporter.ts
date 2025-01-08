@@ -83,7 +83,7 @@ const getNamesWithAbsPath = (task: Task): string[] => {
   return names;
 };
 
-export interface Options {
+export interface ReporterOptions {
   outputDir?: string;
 
 
@@ -91,17 +91,17 @@ export interface Options {
   isTTY?: boolean;
 }
 
-function getOutputDir(option?: Options): string {
+function getOutputDir(option?: ReporterOptions): string {
   return option?.outputDir ?? 'tmp/';
 }
 
 /**
  * Custom reporter that prints the console log from parallel run tests correctly after each test.
  */
-export default class Reporter extends DefaultReporter {
-  private readonly options: Options;
+export class Reporter extends DefaultReporter {
+  private readonly options: ReporterOptions;
 
-  constructor(options: Options) {
+  constructor(options: ReporterOptions) {
     super(options);
     this.options = options;
   }

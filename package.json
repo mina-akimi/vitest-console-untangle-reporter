@@ -6,6 +6,16 @@
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "exports": {
+    "import": {
+      "default": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "require": {
+      "default": "./dist/index.cjs",
+      "types": "./dist/index.d.cts"
+    }
+  },
   "repository": "https://github.com/mina-akimi/vitest-console-untangle-reporter",
   "author": "Mina Akimi <minasan.akimi@gmail.com>",
   "license": "MIT",

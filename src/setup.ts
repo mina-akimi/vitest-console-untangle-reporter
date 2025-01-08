@@ -4,7 +4,7 @@ import fs from 'fs';
 import { Console } from 'console';
 import { createLogFile, fileHash, testNameToFileName } from './common.js';
 
-export type Config = {
+export type SetupConfig = {
   // Directory to write the captured console log files.  Defaults to 'tmp/' in the current working directory.
   outputDir?: string;
 }
@@ -39,7 +39,7 @@ export const captureConsole = (outputDir: string): WriteStream | undefined => {
   return output;
 };
 
-function getOutputDir(config?: Config): string {
+function getOutputDir(config?: SetupConfig): string {
   return config?.outputDir ?? 'tmp/';
 }
 
@@ -51,7 +51,7 @@ function getOutputDir(config?: Config): string {
  * @param ctx
  * @param config
  */
-export function beforeEachListener(ctx: Context, config?: Config): void {
+export function beforeEachListener(ctx: Context, config?: SetupConfig): void {
   ctx.outputStream = captureConsole(getOutputDir(config));
 }
 
@@ -73,7 +73,7 @@ export function afterEachListener(ctx: Context): void {
  *
  * @param config
  */
-export function setup (config?: Config): void {
+export function setup (config?: SetupConfig): void {
   beforeEach((ctx: Context)=> {
     beforeEachListener(ctx, config);
   });
