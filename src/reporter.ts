@@ -101,7 +101,7 @@ function getOutputDir(option?: ReporterOptions): string {
 export class Reporter extends DefaultReporter {
   private readonly options: ReporterOptions;
 
-  constructor(options: ReporterOptions) {
+  constructor(options: ReporterOptions = {}) {
     super(options);
     this.options = options;
   }
