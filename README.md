@@ -44,6 +44,10 @@ export default defineConfig({
 });
 ```
 
+# Limitations
+
+- The reporter only prints the console output for failed test cases.  This is because it's adapted from the `DefaultReporter`, which only prints errors on failed tests.
+
 # License
 
 MIT
