@@ -29,6 +29,13 @@ export const captureConsole = (outputDir: string): WriteStream | undefined => {
 
   const fullTestName = testFile + ' > ' + testName;
 
+  try {
+    fs.mkdirSync(outputDir, { recursive: true });
+  } catch (err) {
+    console.error('Failed to create output directory for Vitest reporter: ' + outputDir, err);
+    throw err;
+  }
+
   const output = fs.createWriteStream(createLogFile(fullTestName, outputDir));
 
   console = new Console({
