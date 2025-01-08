@@ -47,6 +47,8 @@ export default defineConfig({
 # Limitations
 
 - The reporter only prints the console output for failed test cases.  This is because it's adapted from the `DefaultReporter`, which only prints errors on failed tests.
+- This reporter works by replacing the global `console` with one that outputs to the log files.  As a result, this only works if the tests files are run in [isolation](https://vitest.dev/guide/improving-performance) (i.e., not sharing global `console`), and test cases inside a file are not run [concurrently](https://vitest.dev/guide/features#running-tests-concurrently).
+- This only intercepts `console` logs.  Any other ways that print out to stdout/stderr are not captured.
 
 # License
 
