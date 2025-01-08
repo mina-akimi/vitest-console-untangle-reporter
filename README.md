@@ -39,7 +39,7 @@ export default defineConfig({
     // reporters: ['default'],
     reporters: ['@mina-akimi/vitest-console-untable-reporter/reporter'],
     // Or if you set up a different output directory, you must also set it correctly here, otherwise the reporter cannot find the log files.
-    // reporters: [['@mina-akimi/vitest-console-untable-reporter', {outputDir: 'path/to/output/dir'}]],
+    // reporters: [['@mina-akimi/vitest-console-untable-reporter/reporter', {outputDir: 'path/to/output/dir'}]],
   },
 });
 ```
